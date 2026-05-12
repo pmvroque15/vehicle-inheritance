@@ -4,7 +4,22 @@ public class Vehicle {
     private String color;
     private int numberOfPassengers;
     private int cargoCapacity;
-    private int fuelCapacity;
+    private int fuelCapacity = 0;
+
+    public Vehicle(String color, int numberOfPassengers, int cargoCapacity, int fuelCapacity) {
+        this.color = color;
+        this.numberOfPassengers = numberOfPassengers;
+        this.cargoCapacity = cargoCapacity;
+        this.fuelCapacity = fuelCapacity;
+    }
+
+    public Vehicle(String color, int numberOfPassengers, int cargoCapacity) {
+
+        this.color = color;
+        this.numberOfPassengers = numberOfPassengers;
+        this.cargoCapacity = cargoCapacity;
+
+    }
 
     public String getColor() {
         return color;
