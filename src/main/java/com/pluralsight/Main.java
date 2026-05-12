@@ -1,17 +1,48 @@
 package com.pluralsight;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        ArrayList<Vehicle> vehicles = new ArrayList<>();
+        Moped moped = new Moped();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        //Inheritance of Moped extending Vehicle class
+        moped.setColor("Black");
+        moped.setCargoCapacity(2);
+        moped.setFuelCapacity(3);
+
+        Car car = new Car();
+
+        car.setCargoCapacity(5);
+        car.setColor("Midnight gray");
+        car.setFuelCapacity(6);
+
+        SemiTruck semiTruck = new SemiTruck();
+
+        semiTruck.setColor("White");
+        semiTruck.setCargoCapacity(4);
+        semiTruck.setFuelCapacity(8);
+
+        Hovercraft hovercraft = new Hovercraft();
+
+        hovercraft.setColor("Black");
+        hovercraft.setCargoCapacity(10);
+        hovercraft.setFuelCapacity(20);
+
+        vehicles.add(moped);
+        vehicles.size();
+
+        int number = 0;
+        for (Vehicle v : vehicles) {
+            number++;
+            System.out.printf("VEHICLE %s %nCOLOR: %s | CARGO CAPACITY: %s | FUEL CAPACITY: %s %n", number, v.getColor(), v.getCargoCapacity(), v.getFuelCapacity());
         }
+
+        if (vehicles.isEmpty()) {
+            System.out.println("Naur vehicles");
+        }
+
+
     }
 }
